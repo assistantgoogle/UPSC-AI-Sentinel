@@ -1,0 +1,8 @@
+streamlit
+requests
+sentence-transformers
+torch
+numpy
+newspaper3k
+nltk
+python-dotenv
