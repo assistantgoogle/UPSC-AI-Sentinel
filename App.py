@@ -28,8 +28,11 @@ st.set_page_config(
     layout="wide"
 )
 
-# Load API key from environment variable
-NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY")
+# Load API key with support for local .env and Streamlit Secrets
+if "NEWSAPI_KEY" in st.secrets:
+    NEWSAPI_KEY = st.secrets["NEWSAPI_KEY"]
+else:
+    NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY")
 
 
 # Trusted Indian News Sources
